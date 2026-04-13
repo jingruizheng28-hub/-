@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>执信中学 | 青春的抉择</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Serif SC', serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .highlight {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .timeline {
+      border-left: 2px solid #333;
+      padding-left: 20px;
+    }
+
+    .timeline p {
+      margin: 20px 0;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">学校简介</a>
+  <a href="#spirit">精神与校训</a>
+  <a href="#history">百年历史</a>
+  <a href="#future">你的选择</a>
+</nav>
+
+<header>
+  <div>
+    <h1>执信中学</h1>
+    <p>青春的抉择 · 无限可能</p>
+  </div>
+</header>
+
+<section id="about" class="fade-in">
+  <h2>百年名校</h2>
+  <p class="highlight">
+    它诞生于1921年，与国家命运同频共振。<br>
+    它以革命先驱之名命名，以复兴中华为己任。<br>
+    它不仅是一所学校，更是一种精神象征。
+  </p>
+</section>
+
+<section id="spirit" class="fade-in">
+  <h2>精神与校训</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>崇德</h3>
+      <p>以品德立身，培养有责任感的时代青年。</p>
+    </div>
+    <div class="card">
+      <h3>瀹智</h3>
+      <p>启迪智慧，追求真理与创新。</p>
+    </div>
+    <div class="card">
+      <h3>担当</h3>
+      <p>从个人理想到家国情怀，肩负时代使命。</p>
+    </div>
+  </div>
+</section>
+
+<section id="history" class="fade-in">
+  <h2>底蕴与发展</h2>
+  <div class="timeline">
+    <p>1921年：学校诞生，开启百年征程</p>
+    <p>国家级示范高中：教育质量卓越</p>
+    <p>四大校区：形成教育集团</p>
+    <p>辐射两市八区：引领教育发展</p>
+  </div>
+</section>
+
+<section class="fade-in">
+  <h2>人才辈出</h2>
+  <p class="highlight">
+    一代代学子从这里出发，勇敢担当，探索未知。<br>
+    他们用青春书写辉煌，从个人追求走向家国天下。
+  </p>
+</section>
+
+<section id="future" class="fade-in">
+  <h2>你的选择</h2>
+  <p class="highlight">
+    总有一种力量，让追梦少年向往这里。<br>
+    总有一种力量，让求知学子奔向这里。<br><br>
+    你不凡的青春，需要勇敢选择。<br>
+    在执信，必将精彩绽放。
+  </p>
+</section>
+
+<footer>
+  <p>执信中学 © 青春的抉择</p>
+</footer>
+
+<script>
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
